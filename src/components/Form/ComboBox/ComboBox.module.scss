@@ -1,0 +1,46 @@
+.ComboBox {
+    font-weight: 500;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  
+    select {
+      display: block;
+      padding: 0.2rem 1rem;
+      outline: none;
+      border: none;
+      text-align: left;
+      border-bottom: 2px solid #8f9596;
+      width: 270px;
+      cursor: pointer;
+      -webkit-appearance: none;
+    }
+  
+    select:hover {
+      border-bottom: 2px solid #8bffff;
+    }
+  
+    select:focus {
+      border-bottom: 2px solid #ff5d9e;
+    }
+      
+    select:after {
+        content: "\25BE";
+        float: right;
+        margin-top: -3px;
+      }
+      
+      @media screen and (-webkit-min-device-pixel-ratio:0) {
+        select {
+          /* remove arrow */
+          -webkit-appearance: none;
+          /* add some padding for image */
+          padding-right: 15px; 
+          /* apply SVG with arrow */
+          /* change width value to move arrow to the left */
+          background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="15" viewBox="0 0 15 15"><path d="M 8,5.5 11,9.5 14,5.5 z"></path></svg>');
+          background-repeat: no-repeat;
+          background-position: center right;
+        }
+  }
+}
+  
