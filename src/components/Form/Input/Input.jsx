@@ -1,12 +1,12 @@
 import styles from './Input.module.scss'
 
-const Input = ({reference, name, type, placeholder, pattern, max }) => {
+const Input = ({name, type, disabled, max, onChange, value}) => {
   // prettier-ignore
+
   return (
     <label className={styles.Input}>
       {name}
-      <input ref={reference} type={type} placeholder={placeholder} pattern={'' || pattern} maxLength={max || 255}
-      />
+      <input type={type} value={value} maxLength={max || 255} disabled={disabled} onChange={onChange}/>
     </label>
   )
 }

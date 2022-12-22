@@ -1,9 +1,9 @@
 import styles from './Button.module.scss'
 
-const Input = ({id, value, placeholder, onClick}) => {
+const Button = ({name}) => {
   return (
-      <input className={styles.Button} value={value} id={id} type='submit' placeholder={placeholder} onClick={onClick}/>
+      <input className={styles.Button} value={name} type='submit' />
   )
 }
 
-export default Input
+export default Button
