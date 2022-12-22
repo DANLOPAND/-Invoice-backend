@@ -1,11 +1,13 @@
 import Input from "./Input/Input";
 import Button from "./Button/Button";
-import { useState, useRef, useEffect } from "react";
+import { useState, useEffect } from "react";
 import styles from "./Form.module.scss";
 import ComboBox from "./ComboBox/ComboBox";
 import SelectDate from "./DatePicker/SelectDate";
 import { getClients } from "../../Services/Services";
 import DetailsForm from "./DetailsForm";
+import MaterialReactTable from 'material-react-table';
+import { ProductColumns } from "./data";
 
 const InvoiceForm = ({}) => {
   const [date, setDate] = useState(new Date());
@@ -14,7 +16,11 @@ const InvoiceForm = ({}) => {
 
   useEffect(() => {
     getClients(setclient);
-  }, []);
+  }, [details]);
+
+  const addDetails = (ev) => {
+    setDetails([...details, ev]);
+  };
 
   // prettier-ignore
   return (
@@ -27,7 +33,8 @@ const InvoiceForm = ({}) => {
         </div>
           <Button id="download" value="Descargar"></Button>
       </form>
-      <DetailsForm Details={details}></DetailsForm>
+      <DetailsForm details={details} addDetails={ev => addDetails(ev)}></DetailsForm>
+      <MaterialReactTable columns={ProductColumns} data={details}></MaterialReactTable>
     </>
   );
 };

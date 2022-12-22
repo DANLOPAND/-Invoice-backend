@@ -5,21 +5,23 @@ import styles from "./Form.module.scss";
 import { getProducts } from "../../Services/Services";
 import { useState, useEffect } from "react";
 
-const DetailsForm = ({ Details }) => {
+const DetailsForm = ({addDetails}) => {
   const [products, setProducts] = useState([]);
   const [quantity, setQuantity] = useState(0);
   const [price, setPrice] = useState(0);
   const [subTotal, setSubTotal] = useState(0);
+  const [SelectedProduct, setSelectedProduct] = useState({});
 
   const handleDetails = (ev) => {
     ev.preventDefault();
-    console.log(ev.target);
+    addDetails({id : SelectedProduct.id, name: SelectedProduct.name, quantity: quantity, price: price, subTotal: subTotal});
   };
 
   const handleProductChange = (ev) => {
     setPrice(ev.target.value);
     products.find((item) => {
       if (item.id.toString() === ev.target.value) {
+        setSelectedProduct(item);
         setPrice(item.price);
       }
     });
@@ -40,7 +42,11 @@ const DetailsForm = ({ Details }) => {
           list={products}
           onChange={handleProductChange}
         ></ComboBox>
-        <Input name="Quantity" onChange = {ev => setQuantity(ev.target.value)}></Input>
+        <Input
+          name="Quantity"
+          type="number"
+          onChange={(ev) => setQuantity(ev.target.value)}
+        ></Input>
         <Input name="Price" disabled={true} value={price}></Input>
         <Input name="Total" disabled={true} value={subTotal}></Input>
       </div>
