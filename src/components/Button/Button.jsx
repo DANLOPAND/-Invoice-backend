@@ -1,8 +1,8 @@
 import styles from './Button.module.scss'
 
-const Input = ({id, value, placeholder, onClick}) => {
+const Input = ({name, onClick}) => {
   return (
-      <input className={styles.Button} value={value} id={id} type='submit' placeholder={placeholder} onClick={onClick}/>
+      <button className={styles.Button} onClick={onClick}> {name} </button>
   )
 }
 

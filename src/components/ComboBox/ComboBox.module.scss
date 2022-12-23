@@ -43,4 +43,20 @@
         }
   }
 }
+
+@media (max-width: 900px) {
+  .ComboBox {
+    select {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .ComboBox {
+    select {
+      width: 100%;
+    }
+  }
+}
   

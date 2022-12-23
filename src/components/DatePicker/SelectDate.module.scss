@@ -1,0 +1,68 @@
+.Input {
+    font-weight: 500;
+    margin: 0.5rem 0;
+    font-size: 1rem;
+  
+    input {
+      display: block;
+      padding: 0.2rem 1rem;
+      outline: none;
+      border: none;
+      text-align: left;
+      border-bottom: 2px solid #8f9596;
+      width: 200px;
+      cursor: text;
+    }
+  
+    input:hover {
+      border-bottom: 2px solid #8bffff;
+    }
+  
+    input:focus {
+      border-bottom: 2px solid #ff5d9e;
+    }
+  
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      appearance: none;
+    }
+  
+    /* Firefox */
+    input[type="number"] {
+      appearance: textfield;
+    }
+  
+    input[type="button"] {
+      cursor: pointer;
+      outline: none;
+      border: none;
+      border-radius: 5px 5px 5px 5px;
+      cursor: pointer;
+      background-color: #3b3b3b;
+    }
+  
+    input[type="button"]:hover {
+      background-color: #56bbf1;
+    }
+  
+    input[type="button"]:active {
+      background-color: rgb(21, 155, 28);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .Input {
+      input {
+        width:  90%;
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .Input {
+      input {
+        width: 100%;
+      }
+    }
+  }
+  

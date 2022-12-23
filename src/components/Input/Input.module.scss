@@ -49,3 +49,20 @@
     background-color: rgb(21, 155, 28);
   }
 }
+
+
+@media (max-width: 900px) {
+  .Input {
+    input {
+      width: 90%;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .Input {
+    input {
+      width: 100%;
+    }
+  }
+}

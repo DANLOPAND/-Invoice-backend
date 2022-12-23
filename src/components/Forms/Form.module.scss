@@ -1,0 +1,42 @@
+.Form{
+    background-color: rgba(0, 0, 0, 0.123);
+    padding: 2%;
+    border-radius: 20px;
+    box-shadow: 0 5px 4px 0 rgba(0, 0, 0, 0.192);
+}
+
+.subTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+.tittle {
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.Grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin-top: 1rem;
+}
+
+@media (max-width: 900px) {
+    .Grid {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .Grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    @media (max-width: 500px) {
+        .Grid {
+            grid-template-columns: 1fr;
+        }
+      }
+  }

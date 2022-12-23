@@ -7,7 +7,7 @@ const selectDate = ({name, date, setDate }) => {
   return (
     <label className={styles.Input}>
       {name}
-      <DatePicker selected={date} onChange={date => setDate(date) }/>
+      <DatePicker selected={date} onChange={ev => setDate(ev) }/>
     </label>
   )
 }
