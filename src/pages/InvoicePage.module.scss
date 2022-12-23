@@ -3,6 +3,7 @@
   flex-direction: column;
   min-height: 100vh;
   padding: 0 25%;
+  margin-bottom: 4rem;
 }
 
 .tittle {
@@ -11,6 +12,29 @@
   text-align: center;
   margin: 0;
   margin-top: 1rem;
+}
+
+.popup-content{
+  height: 50%;
+}
+
+.modal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas:
+  
+    "title title"
+    "form form";
+
+  span {
+    font-weight: 400;
+    margin: 0;
+  }
+  label {
+    font-weight: 600;
+    margin: 0;
+  }
 }
 
 @media (max-width: 1600px) {

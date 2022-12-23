@@ -1,6 +1,7 @@
 import axios from "axios"
 import { toast } from "react-toastify"
 
+// this file contains all the functions that make the API calls, they can be used in any component and its has the habit of make notifications when the API call is done
 const BaseUrl = "http://localhost:3000"
 
 const getProducts = async (setData) => {

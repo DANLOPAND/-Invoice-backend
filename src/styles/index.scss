@@ -4,3 +4,28 @@ body {
   font-weight: 800;
 }
 
+
+@media (max-width: 1600px) {
+  .popup-content  {
+    width: 60% !important;
+
+  }
+}
+
+@media (max-width: 1300px) {
+  .popup-content {
+    width: 70% !important;
+  }
+}
+
+@media (max-width: 1050px) {
+  .popup-content {
+    width: 80% !important;
+  }
+}
+
+@media (max-width: 800px) {
+  .popup-content {
+    width: 95% !important;
+  }
+}

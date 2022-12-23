@@ -21,10 +21,12 @@ const InvoicePage = () => {
   const closeModal = () => setOpen(false);
 
   useEffect(() => {
+    // get the list of invoices from the API if the list is empty
     if (invoice.length === 0) {
       getInvoices(setInvoice);
     }
     setDetails([]);
+    // get the details of the invoice selected from the API
     getInvoiceDetails(selectedRow.id, setDetails);
   }, [show, selectedRow]);
 
@@ -47,25 +49,33 @@ const InvoicePage = () => {
             columns={InvoiceColumns}
             data={invoice}
             enableMultiRowSelection={false}
+          
             muiTableBodyRowProps={({ row }) => ({
               onClick: (event) => {
                 setOpen(true);
+                // update the state of the selected invoice
                 setSelectedRow(row.original);
               },
               sx: {
-                cursor: "pointer", //you might want to change the cursor too when adding an onClick
+                cursor: "pointer",
               },
             })}
           ></Table>
         </section>
         <section>
-          <Popup open={open} closeOnDocumentClick onClose={closeModal}>
-            <div className="modal">
-              <h1>Invoice Details</h1>
-              <label>{selectedRow.date}</label>
-              <span></span>
-              <Table columns={InvoiceDetailsColumns} data={details}></Table>
+          <Popup className={style.Popup} open={open} closeOnDocumentClick onClose={closeModal}>
+          <h1>Invoice Details</h1>
+            <div className={style.modal}>
+              <label>Date: <span>{selectedRow.date}</span></label>
+              <label>Client: <span>{selectedRow.name}</span></label>
+              <label>Subtotal: <span>{selectedRow.subTotal}</span></label>
+              <label>discount: <span>{selectedRow.discount}</span></label>
+              <label>Total: <span>{selectedRow.total}</span></label>
             </div>
+            <Table columns={InvoiceDetailsColumns} data={details}
+            enableDensityToggle={false}
+            initialState={{ density: 'compact' }}
+            ></Table>
           </Popup>
         </section>
       </main>

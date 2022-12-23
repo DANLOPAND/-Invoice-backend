@@ -1,3 +1,5 @@
+// This file contains the columns for the tables
+
 const ProductColumns = [
   {
     accessorKey: "id",
